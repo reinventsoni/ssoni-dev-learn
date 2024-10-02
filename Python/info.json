@@ -6,14 +6,8 @@
     "image": "https://raw.githubusercontent.com/reinventsoni/ssoni-dev-learn-blog/main/_images/Python.jpg"
   },
   {
-    "title": "Intermediate",
-    "subtitle": "Enhance your basic Python Development Skills, and be a confident developer",
-    "description": "lorem ipsum lorem ipsum lorem ipsum lorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsum lorem ipsumlorem ipsum lorem ipsum lorem ipsum",
-    "image": "https://raw.githubusercontent.com/reinventsoni/ssoni-dev-learn-blog/main/_images/Javascript.jpg"
-  },
-  {
-    "title": "Data Visualisation",
-    "subtitle": "Master the Data Visulization skills using Pandas Plotting",
+    "title": "Data Analysis",
+    "subtitle": "Master the Python Data Analysis",
     "description": "lorem ipsum lorem ipsum lorem ipsum lorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsum lorem ipsumlorem ipsum lorem ipsum lorem ipsum",
     "image": "https://raw.githubusercontent.com/reinventsoni/ssoni-dev-learn-blog/main/_images/React.jpg"
   }
