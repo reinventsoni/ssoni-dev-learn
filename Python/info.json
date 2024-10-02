@@ -1,32 +1,20 @@
 [
   {
-    "title": "Python",
-    "subtitle": "Explore the Power of Python",
+    "title": "Foundations",
+    "subtitle": "Explore the foundations and build basic Python skills",
     "description": "lorem ipsum lorem ipsum lorem ipsum lorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsum lorem ipsumlorem ipsum lorem ipsum lorem ipsum",
     "image": "https://raw.githubusercontent.com/reinventsoni/ssoni-dev-learn-blog/main/_images/Python.jpg"
   },
   {
-    "title": "JavaScript",
-    "subtitle": "Explore the Power of JavaScript",
+    "title": "Intermediate",
+    "subtitle": "Enhance your basic Python Development Skills, and be a confident developer",
     "description": "lorem ipsum lorem ipsum lorem ipsum lorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsum lorem ipsumlorem ipsum lorem ipsum lorem ipsum",
     "image": "https://raw.githubusercontent.com/reinventsoni/ssoni-dev-learn-blog/main/_images/Javascript.jpg"
   },
   {
-    "title": "React",
-    "subtitle": "Explore the Power of React",
+    "title": "Data Visualisation",
+    "subtitle": "Master the Data Visulization skills using Pandas Plotting",
     "description": "lorem ipsum lorem ipsum lorem ipsum lorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsum lorem ipsumlorem ipsum lorem ipsum lorem ipsum",
     "image": "https://raw.githubusercontent.com/reinventsoni/ssoni-dev-learn-blog/main/_images/React.jpg"
-  },
-  {
-    "title": "NextJS",
-    "subtitle": "Explore the Power of NexxtJS",
-    "description": "lorem ipsum lorem ipsum lorem ipsum lorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsum lorem ipsumlorem ipsum lorem ipsum lorem ipsum",
-    "image": "https://raw.githubusercontent.com/reinventsoni/ssoni-dev-learn-blog/main/_images/NextJS.jpg"
-  },
-  {
-    "title": "Pytorch",
-    "subtitle": "Explore the Power of PyTorch",
-    "description": "lorem ipsum lorem ipsum lorem ipsum lorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsum lorem ipsumlorem ipsum lorem ipsum lorem ipsum",
-    "image": "https://raw.githubusercontent.com/reinventsoni/ssoni-dev-learn-blog/main/_images/Pytorch.jpg"
   }
 ]
