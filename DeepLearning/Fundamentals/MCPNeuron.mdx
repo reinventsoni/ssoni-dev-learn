@@ -73,43 +73,69 @@ The neuron is said to be activated or in **ON** state (i.e. having value of 1), 
 
 The original experiments proposed by **Warren McCulloch** and **Warren Pitts** to use this model of artificial neurons, and construct different **LOGIC GATES** by simply specifying what the **weights** and **threshold** value should be. It can be easily shown that **MCP Neuron** can be used to model the **AND**, **OR** and **NOT** logic gates, as well as the composition of these three logic gates
 
-**OR Gate**
-| x<sub>1</sub> | x<sub>2</sub> | OR Operation |
-| ---- | ---- | ----------- |
-| 0 | 0 | 0 |
-| 0 | 1 | 1 |
-| 1 | 0 | 1 |
-| 1 | 1 | 1 |
+**OR Gate**<br/>
+OR Gate is a logic gate which returns true (1) if atleast one of the input signal is true i.e. 1. This can be achieved by setting
 
-**AND Gate**
-| x<sub>1</sub> | x<sub>2</sub> | AND Operation |
-| ---- | ---- | ----------- |
-| 0 | 0 | 0 |
-| 0 | 1 | 0 |
-| 1 | 0 | 0 |
-| 1 | 1 | 1 |
+- Weights **w<sub>1</sub>** and **w<sub>1</sub>** to 1, and
+- Threshold **t** = 1
+  and we can easily see that, whenever the aggregated sum is greater then or equal to threshold t, the output is ON (as expected from OR operation)
 
-**NOT Gate**
-| x<sub>1</sub> | NOT Operation |
-| ---- | ----------- |
-| 0 | 1 |
-| 1 | 0 |
+| x<sub>1</sub> | x<sub>2</sub> | OR  | =>  | Agg. Sum      | is >= Threshold (1) | Output |
+| ------------- | ------------- | --- | --- | ------------- | ------------------- | ------ |
+| 0             | 0             | 0   | =>  | 1(0)+1(0) = 0 | No                  | 0      |
+| 0             | 1             | 1   | =>  | 1(0)+1(1) = 1 | Yes                 | 1      |
+| 1             | 0             | 1   | =>  | 1(1)+1(0) = 1 | Yes                 | 1      |
+| 1             | 1             | 1   | =>  | 1(1)+1(1) = 1 | Yes                 | 1      |
 
-**NAND Gate**
-| x<sub>1</sub> | x<sub>2</sub> | NAND Operation |
-| ---- | ---- | ----------- |
-| 0 | 0 | 1 |
-| 0 | 1 | 1 |
-| 1 | 0 | 1 |
-| 1 | 1 | 0 |
+**AND Gate**<br/>
+AND Gate is a logic gate which returns true (1) if atleast one of the input signal is true i.e. 1. This can be achieved by setting
 
-**NOR Gate**
-| x<sub>1</sub> | x<sub>2</sub> | OR Operation |
-| ---- | ---- | ----------- |
-| 0 | 0 | 1 |
-| 0 | 1 | 0 |
-| 1 | 0 | 0 |
-| 1 | 1 | 0 |
+- Weights **w<sub>1</sub>** and **w<sub>1</sub>** to 1, and
+- Threshold **t** = 2
+  and we can easily see that, whenever the aggregated sum is greater then or equal to threshold t, the output is ON (as expected from OR operation)
+  | x<sub>1</sub> | x<sub>2</sub> | OR | => | Agg. Sum | is >= Threshold (2) | Output |
+  | ------------- | ------------- | -- |----| --------------| ------------------ | -------- |
+  | 0 | 0 | 0 | => | 1(0)+1(0) = 0 | No | 0 |
+  | 0 | 1 | 0 | => | 1(0)+1(1) = 1 | No | 0 |
+  | 1 | 0 | 0 | => | 1(1)+1(0) = 1 | No | 0 |
+  | 1 | 1 | 1 | => | 1(1)+1(1) = 2 | Yes | 1 |
+
+**NOT Gate** <br/>
+The NOT Gate inverts the signal of its input, and this can be achieved by having following weights and threshold values:
+
+- Weights **w<sub>1</sub>** and **w<sub>1</sub>** to -1, and
+- Threshold **t** = 0
+
+| x<sub>1</sub> | NOT | =>  | Agg. Sum   | is >= Threshold (0) | Output |
+| ------------- | --- | --- | ---------- | ------------------- | ------ |
+| 0             | 1   | =>  | -1(0) = 0  | Yes                 | 1      |
+| 1             | 0   | =>  | -1(1) = -1 | No                  | 0      |
+
+**NAND Gate** <br/>
+NAND Gate is a logical composition of the AND GATE followed by NOT Gate. It negates the logic of AND Gate, returning ON(1) when no more than one of its input signal is true, and returns **OFF (0)** when all input signals are true (1). This can be achieved by having the following weights and threshold values:
+
+- Weights **w<sub>1</sub>** and **w<sub>1</sub>** to -1, and
+- Threshold **t** = -1
+
+| x<sub>1</sub> | x<sub>2</sub> | NAND | =>  | Agg. Sum        | is >= Threshold (-1) | Output |
+| ------------- | ------------- | ---- | --- | --------------- | -------------------- | ------ |
+| 0             | 0             | 1    | =>  | -1(0)-1(0) = 0  | Yes                  | 1      |
+| 0             | 1             | 1    | =>  | -1(0)-1(1) = -1 | Yes                  | 1      |
+| 1             | 0             | 1    | =>  | -1(1)-1(0) = -1 | Yes                  | 1      |
+| 1             | 1             | 0    | =>  | -1(1)-(1) = -2  | No                   | 0      |
+
+**NOR Gate** <br/>
+NOR Gate is a logical composition of the OR Gate followed by the NOT Gate. It negates the logic of the OR Gate, return **ON (1)** only when none of the inputs are true. This can be achieved by having the following weights and threshold values:
+
+- Weights **w<sub>1</sub>** and **w<sub>1</sub>** to -1, and
+- Threshold **t** = 0
+
+| x<sub>1</sub> | x<sub>2</sub> | NOR | =>  | Agg. Sum        | is >= Threshold (0) | Output |
+| ------------- | ------------- | --- | --- | --------------- | ------------------- | ------ |
+| 0             | 0             | 1   | =>  | -1(0)-1(0) = 0  | Yes                 | 1      |
+| 0             | 1             | 0   | =>  | -1(0)-1(1) = -1 | No                  | 0      |
+| 1             | 0             | 0   | =>  | -1(1)-1(0) = -1 | No                  | 0      |
+| 1             | 1             | 0   | =>  | -1(1)-(1) = -2  | No                  | 0      |
 
 ### 1.2 Learning Algorithms of Early Days
 
