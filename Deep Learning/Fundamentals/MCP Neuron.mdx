@@ -40,27 +40,3 @@ The idea of the **McCulloch Pitts Neuron** was to provide the abstractions on ho
 - and the neruron fires if the accumulates signal of all the inputs have enough stimulation in it, or in other words is above certain threshold.
 
 **Formal Mathematical Definition of MCP Neuron**
-
-- The inputs to MCP Neuron can be considered as a vector: [$x_{1}$, $x_{2}$, $x_{3}$, ..... $x_{n}$]
-- Every input would have certain weights (importance) associated with it and let that be represented by the vector of weights **w**: [$w_{1}$, $w_{2}$, $w_{3}$, ..... $w_{n}$], where each $w_{i}$ has a value of -1, 0 or 1
-  - input signal with weight **1** are called excitory input, since they contribute towards a positive output signal in the sum
-  - input signal with weight of **-1** are called inhibitory since they repress a positive output signal in the sum
-  - input signal with weight of **0** do not contribute at all to the neuron
-- The accumulated signal (sometimes also referred to as **net input**) can then be calculated as follows:
-  $$
-  z = w_{1} x_{1} + w_{2} x_{2} + .... + w_{n} x_{n} = \sum_{j=1}^{n} w_j * x_j
-  $$
-- Then for some threshold value **t**, an integer, the output signal is determined by the **decision function** or **activation function** as follows:
-  $$
-  y = \sigma(z) =
-    \begin{cases}
-      1       & \text{if } z \text{ >=t}\\
-      0  & \text{otherwise }
-    \end{cases}
-  $$
-
-## 1.2 Learning Algorithms of Early Days
-
-```python
-
-```
