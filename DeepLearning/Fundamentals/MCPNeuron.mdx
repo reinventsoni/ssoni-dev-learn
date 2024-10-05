@@ -47,7 +47,7 @@ The idea of the **McCulloch Pitts Neuron** was to provide the abstractions on ho
 - binary output i.e. **ON** or **OFF** state (i.e. output of neuron, equivalent to Axon),
 - and the neruron fires if the accumulates signal of all the inputs have enough stimulation in it, or in other words is above certain threshold.
 
-**Formal Mathematical Definition of MCP Neuron**
+#### 1.1.1 Formal Mathematical Definition of McCulloch Pitt's Neuron
 
 - The inputs to MCP Neuron can be considered as a vector: **x**: [x<sub>1</sub>, x<sub>2</sub>, x<sub>3</sub>, ....... x<sub>n-1</sub>, x<sub>n</sub>]
 - Every input would have certain weights (importance) associated with it and let that be represented by the vector of weights **w**: [w<sub>1</sub>, w<sub>2</sub>, w<sub>3</sub>, ....... w<sub>n-1</sub>, w<sub>n</sub>], where each **w<sub>i</sub>** has a value of -1, 0 or 1
@@ -59,6 +59,8 @@ The idea of the **McCulloch Pitts Neuron** was to provide the abstractions on ho
 - Then for some threshold value **t**, an integer, the output signal is determined by the **decision function** or **activation function** as follows:
   - y = 1, if z >= t or 0 otherwise
 
+The neuron is said to be activated or in **ON** state (i.e. having value of 1), when the weighted sum is greater than the threshold value
+
 <MDXImage
   src="https://raw.githubusercontent.com/reinventsoni/ssoni-dev-learn-blog/main/_images/DeepLearning/_images/BiologicalvsAritificalNeuron.png"
   alt="Biological Neuron vs Aritificial Neuron"
@@ -66,6 +68,48 @@ The idea of the **McCulloch Pitts Neuron** was to provide the abstractions on ho
   width="1200"
   height="500"
 />
+
+#### 1.1.2 Original Experiments using McCulloch Pitt's Neuron
+
+The original experiments proposed by **Warren McCulloch** and **Warren Pitts** to use this model of artificial neurons, and construct different **LOGIC GATES** by simply specifying what the **weights** and **threshold** value should be. It can be easily shown that **MCP Neuron** can be used to model the **AND**, **OR** and **NOT** logic gates, as well as the composition of these three logic gates
+
+**OR Gate**
+| x<sub>1</sub> | x<sub>2</sub> | OR Operation |
+| ---- | ---- | ----------- |
+| 0 | 0 | 0 |
+| 0 | 1 | 1 |
+| 1 | 0 | 1 |
+| 1 | 1 | 1 |
+
+**AND Gate**
+| x<sub>1</sub> | x<sub>2</sub> | AND Operation |
+| ---- | ---- | ----------- |
+| 0 | 0 | 0 |
+| 0 | 1 | 0 |
+| 1 | 0 | 0 |
+| 1 | 1 | 1 |
+
+**NOT Gate**
+| x<sub>1</sub> | NOT Operation |
+| ---- | ----------- |
+| 0 | 1 |
+| 1 | 0 |
+
+**NAND Gate**
+| x<sub>1</sub> | x<sub>2</sub> | NAND Operation |
+| ---- | ---- | ----------- |
+| 0 | 0 | 1 |
+| 0 | 1 | 1 |
+| 1 | 0 | 1 |
+| 1 | 1 | 0 |
+
+**NOR Gate**
+| x<sub>1</sub> | x<sub>2</sub> | OR Operation |
+| ---- | ---- | ----------- |
+| 0 | 0 | 1 |
+| 0 | 1 | 0 |
+| 1 | 0 | 0 |
+| 1 | 1 | 0 |
 
 ### 1.2 Learning Algorithms of Early Days
 
