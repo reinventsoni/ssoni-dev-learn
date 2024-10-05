@@ -1,0 +1,77 @@
+---
+title: "Artificial Neurong"
+description: "The concept of Artificial Neuron as proposed by McCulloch Pitts Neuron"
+image: "https://raw.githubusercontent.com/reinventsoni/ssoni-dev-learn-blog/main/_images/DeepLearning/_images/DeepLearningFoundations.webp"
+publishedAt: "2023-01-01"
+updatedAt: "2023-01-01"
+author: "Sanjay Soni"
+isPublished: "true"
+tags: ["deep-learning", "deep-learning-foundations"]
+---
+
+# 1. Historical Roots of Deep Learning
+
+Deep Learning has its root in 1940's, when **Warren McCulloch** and **Warren Pitts** published the concept of Artificial Neuron, also referred to as **MCP Neuron** in 1943 (A Logical Calculus of the Ideas Immanent in Nervous Activity by W.S McCulloch and W.Pitts, Bulletin of Mathetmatical Biophysics, 5(4): 115-133, 193)
+[Reference](https://www.historyofinformation.com/detail.php?id=634)
+and [Link to Paper](http://www.cse.chalmers.se/~coquand/AUTOMATA/mcp.pdf)
+
+They drew on the three sources to come up with the concept of Artificial Neurons:
+
+- knowledge of basic psychology and functions of neuron brain
+- a formal analysis of propositional logic by **Russell** and **Whitehead**, and
+- Turing's **Theory of Computation**
+
+## 1.1 McCulloch Pitt's Neuron
+
+The concept of artificial neuron was inspired by the **Biological Neurons** which are interconnected nerve cells in the brain and are involved in the processing and transmitting of various signals, which is illustrated in figure below:
+
+<img
+  src="https://raw.githubusercontent.com/reinventsoni/ssoni-dev-learn-blog/main/_images/DeepLearning/_images/BiologicalNeuron.webp"
+  align="center"
+  width="500 px"
+/>
+
+A single neuron in its simplified explanation consists of following parts:
+
+- **SOMA**: the main part of the neuron which processes signal.
+- **DENDRITES**: the branch-like shapes which receives signals from other neurons (i.e. are input to neuron), and
+- **AXON**: a single nerve which sends signals to other neurons (i.e., is an output of the neuron)
+
+and the connections between the nerurons are known as **SYNAPSES**
+
+The idea of the **McCulloch Pitts Neuron** was to provide the abstractions on how the brain neuron works, and was considered as a simple logic gate which receives
+
+- multiple input binary signals (equivalent to dendrites),
+- binary output i.e. **ON** or **OFF** state (i.e. output of neuron, equivalent to Axon),
+- and the neruron fires if the accumulates signal of all the inputs have enough stimulation in it, or in other words is above certain threshold.
+
+**Formal Mathematical Definition of MCP Neuron**
+
+- The inputs to MCP Neuron can be considered as a vector: [$x_{1}$, $x_{2}$, $x_{3}$, ..... $x_{n}$]
+- Every input would have certain weights (importance) associated with it and let that be represented by the vector of weights **w**: [$w_{1}$, $w_{2}$, $w_{3}$, ..... $w_{n}$], where each $w_{i}$ has a value of -1, 0 or 1
+  - input signal with weight **1** are called excitory input, since they contribute towards a positive output signal in the sum
+  - input signal with weight of **-1** are called inhibitory since they repress a positive output signal in the sum
+  - input signal with weight of **0** do not contribute at all to the neuron
+- The accumulated signal (sometimes also referred to as **net input**) can then be calculated as follows:
+  $$
+  z = w_{1} x_{1} + w_{2} x_{2} + .... + w_{n} x_{n} = \sum_{j=1}^{n} w_j * x_j
+  $$
+- Then for some threshold value **t**, an integer, the output signal is determined by the **decision function** or **activation function** as follows:
+  $$
+  y = \sigma(z) =
+    \begin{cases}
+      1       & \text{if } z \text{ >=t}\\
+      0  & \text{otherwise }
+    \end{cases}
+  $$
+
+<img
+  src="https://raw.githubusercontent.com/reinventsoni/ssoni-dev-learn-blog/main/_images/DeepLearning/_images/BiologicalvsAritificalNeuron.png"
+  align="center"
+/>
+
+## 1.2 Learning Algorithms of Early Days
+
+```python
+
+```
