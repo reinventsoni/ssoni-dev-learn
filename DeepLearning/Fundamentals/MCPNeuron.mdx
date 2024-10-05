@@ -49,6 +49,16 @@ The idea of the **McCulloch Pitts Neuron** was to provide the abstractions on ho
 
 **Formal Mathematical Definition of MCP Neuron**
 
+- The inputs to MCP Neuron can be considered as a vector: **x**: [x<sub>1</sub>, x<sub>2</sub>, x<sub>3</sub>, ....... x<sub>n-1</sub>, x<sub>n</sub>]
+- Every input would have certain weights (importance) associated with it and let that be represented by the vector of weights **w**: [w<sub>1</sub>, w<sub>2</sub>, w<sub>3</sub>, ....... w<sub>n-1</sub>, w<sub>n</sub>], where each **w<sub>i</sub>** has a value of -1, 0 or 1
+  - input signal with weight **1** are called excitory input, since they contribute towards a positive output signal in the sum
+  - input signal with weight of **-1** are called inhibitory since they repress a positive output signal in the sum
+  - input signal with weight of **0** do not contribute at all to the neuron
+- The accumulated signal (sometimes also referred to as **net input**) can then be calculated as follows:<br>
+  - z = w<sub>1</sub>.x<sub>1</sub> + w<sub>2</sub>.x<sub>2</sub> + .... + w<sub>n-1</sub>.x<sub>n-1</sub> + w<sub>n</sub>.x<sub>n</sub>
+- Then for some threshold value **t**, an integer, the output signal is determined by the **decision function** or **activation function** as follows:
+  - y = 1, if z >= t or 0 otherwise
+
 <MDXImage
   src="https://raw.githubusercontent.com/reinventsoni/ssoni-dev-learn-blog/main/_images/DeepLearning/_images/BiologicalvsAritificalNeuron.png"
   alt="Biological Neuron vs Aritificial Neuron"
@@ -58,3 +68,7 @@ The idea of the **McCulloch Pitts Neuron** was to provide the abstractions on ho
 />
 
 ### 1.2 Learning Algorithms of Early Days
+
+```{=latex}
+
+```
