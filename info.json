@@ -1,32 +1,8 @@
 [
   {
-    "title": "Python",
-    "subtitle": "Explore the Power of Python",
-    "description": "lorem ipsum lorem ipsum lorem ipsum lorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsum lorem ipsumlorem ipsum lorem ipsum lorem ipsum",
-    "image": "https://raw.githubusercontent.com/reinventsoni/ssoni-dev-learn-blog/main/_images/Python.jpg"
-  },
-  {
-    "title": "JavaScript",
-    "subtitle": "Explore the Power of JavaScript",
-    "description": "lorem ipsum lorem ipsum lorem ipsum lorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsum lorem ipsumlorem ipsum lorem ipsum lorem ipsum",
-    "image": "https://raw.githubusercontent.com/reinventsoni/ssoni-dev-learn-blog/main/_images/Javascript.jpg"
-  },
-  {
-    "title": "React",
-    "subtitle": "Explore the Power of React",
-    "description": "lorem ipsum lorem ipsum lorem ipsum lorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsum lorem ipsumlorem ipsum lorem ipsum lorem ipsum",
-    "image": "https://raw.githubusercontent.com/reinventsoni/ssoni-dev-learn-blog/main/_images/React.jpg"
-  },
-  {
-    "title": "NextJS",
-    "subtitle": "Explore the Power of NexxtJS",
-    "description": "lorem ipsum lorem ipsum lorem ipsum lorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsum lorem ipsumlorem ipsum lorem ipsum lorem ipsum",
-    "image": "https://raw.githubusercontent.com/reinventsoni/ssoni-dev-learn-blog/main/_images/NextJS.jpg"
-  },
-  {
-    "title": "Pytorch",
-    "subtitle": "Explore the Power of PyTorch",
-    "description": "lorem ipsum lorem ipsum lorem ipsum lorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsum lorem ipsumlorem ipsum lorem ipsum lorem ipsum",
-    "image": "https://raw.githubusercontent.com/reinventsoni/ssoni-dev-learn-blog/main/_images/Pytorch.jpg"
+    "title": "Deep Learning",
+    "subtitle": "Explore Deep Learning Up",
+    "description": "Mastering the art of deep learning, from first-principles as well as application-first hands on approach.",
+    "image": "https://raw.githubusercontent.com/reinventsoni/ssoni-dev-learn-blog/main/_images/DeepLearning.webp"
   }
 ]
