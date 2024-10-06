@@ -9,6 +9,8 @@ isPublished: "true"
 tags: ["deep-learning", "deep-learning-foundations"]
 ---
 
+# The First Artificial Neuron
+
 ## 1. Historical Roots of Deep Learning
 
 Deep Learning has its root in 1940's, when **Warren McCulloch** and **Warren Pitts** published the concept of Artificial Neuron, also referred to as **MCP Neuron** in 1943 (A Logical Calculus of the Ideas Immanent in Nervous Activity by W.S McCulloch and W.Pitts, Bulletin of Mathetmatical Biophysics, 5(4): 115-133, 193)
@@ -137,8 +139,26 @@ NOR Gate is a logical composition of the OR Gate followed by the NOT Gate. It ne
 | 1             | 0             | 0   | =>  | -1(1)-1(0) = -1 | No                  | 0      |
 | 1             | 1             | 0   | =>  | -1(1)-(1) = -2  | No                  | 0      |
 
-### 1.2 Learning Algorithms of Early Days
+#### 1.1.3 Excitement and Challenges of MCP Neuron
 
-```python
-import numpy as np
-```
+The concept of MCP Neuron seems so simple to represent **artificial intelligence** of any kind, yet it is - and it isn't at the same time. Formal Logic is a fundamental component, and will always remain one of the important ones for the **Computational Intelligence,** and for a machine to have some sort of intelligence it should be able to comprehend logic gates at minimum. The idea being that logic gates can be stringed together to form logic cicruits, capable of executing any kind of instructions.
+
+What makes the MCP Neuron different is that it was able to achieve this through an approach which was inspired by biological neurons, and this was a promising starting point, and there was a LOT and LOT of excitement because of this aspect.
+
+On the other hand if we take a pause and think it through, the main challenge with this concept of **Artificial Neuron** alone is that every logic gate that can be modelled (and hence every logic cirucit which is a collection of neurons could model) had to be pre-programmed i.e., we need to somehow identify and lock the values of **weights** and **threshold** for the neuron to activate certain way based on various input combinations.
+
+This stands out as a massive contrast to how every brain works, which learns from experience. It was not after about a decade or so when various Learning Algorithms were devised, combining these algoritms with the **MCP Neurons**, for the very first time we were able to learn (even through rudimentary stuffs) from the training data, without explictly programming.
+
+In the next section of this blog we will discuss some of these very early learning algorithms, gain an intuitive understanding of how this algorithm works (logically speaking), before we dive deep into the nuts and bolts of the deep learning of today.
+
+And yes, we will also see the limitation which was uncovered in the approach of MCP Neuron + Learning Algorithm, which dried up all the funding and let to the era which is referred to as **AI WINTER**
+
+> On a side note, do you reckon based on all the hype around LLM capabilities and the fact that OpenAI going to incur billion of dollar of losses, are we heading into another AI Winter. If it happens it will be sad, because I do believe there is lot of potential in computation intelligence approaches and LLM/GenAI is just a tiny portion of that.
+
+### 1.2 Learning Algorithms for Aritifical Neurons
+
+It was almost after a decade with the invent of the famour learning algorithms **Perceptron**, that the neural network were able to learn based on the data. But it was not just **perceptron**, which made Neurons mainstream, there are other notable discoveries as well and are listed below:
+
+- [**Hebbian Learning Algorithm**](https://www.historyofinformation.com/detail.php?id=3902), from _Donald Hebb_ in 1949
+- [**Perceptron Learning Algorithm**](https://www.historyofinformation.com/detail.php?id=770), from _Frank Rossenblatt_ in 1960, and
+- [**Adaline Learning Algorithm**](https://en.wikipedia.org/wiki/ADALINE), from _Bernie Widrow_ in 1962
