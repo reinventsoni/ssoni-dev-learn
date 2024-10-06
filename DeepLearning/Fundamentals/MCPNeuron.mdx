@@ -155,6 +155,28 @@ And yes, we will also see the limitation which was uncovered in the approach of 
 
 > On a side note, do you reckon based on all the hype around LLM capabilities and the fact that OpenAI going to incur billion of dollar of losses, are we heading into another AI Winter. If it happens it will be sad, because I do believe there is lot of potential in computation intelligence approaches and LLM/GenAI is just a tiny portion of that.
 
+#### 1.1.4 Limitations of MCP Neuron
+
+Now we have already see that MCP Neuron experiments were focused on constructing Logical Gates using the weighted sum approach which resembles (atleast at a very high level) how the neurological brain works.
+
+The following figure summarize the workings of MCP Neuron:
+
+<img
+  src="https://raw.githubusercontent.com/reinventsoni/ssoni-dev-learn-blog/main/_images/DeepLearning/_images/MCPNeuronThreshold.png"
+  align="center"
+  width="700"
+  height="700"
+/>
+
+This was actually a simplest of the binary classification, but there are various limitations in the concept MCP Neuron, and they are as follows:
+
+- it process boolean inputs only.
+- it gives equal weights the each inputs
+- the threshold value theta (or t) must be chosen manually
+- the learning aspect was missing, i.e. it cannot learn from data, already highlighted by the fact that weights and thresholds have to be chosen beforehand manually
+
+For all of these reasons, various Learning Algorithms were proposed in the coming years, which helped push the area of Neural Networks (or the **connectionist approach** of AI)
+
 ### 1.2 Learning Algorithms for Aritifical Neurons
 
 It was almost after a decade with the invent of the famour learning algorithms **Perceptron**, that the neural network were able to learn based on the data. But it was not just **perceptron**, which made Neurons mainstream, there are other notable discoveries as well and are listed below:
@@ -162,3 +184,78 @@ It was almost after a decade with the invent of the famour learning algorithms *
 - [**Hebbian Learning Algorithm**](https://www.historyofinformation.com/detail.php?id=3902), from _Donald Hebb_ in 1949
 - [**Perceptron Learning Algorithm**](https://www.historyofinformation.com/detail.php?id=770), from _Frank Rossenblatt_ in 1960, and
 - [**Adaline Learning Algorithm**](https://en.wikipedia.org/wiki/ADALINE), from _Bernie Widrow_ in 1962
+
+#### 1.2.1 Rosenblatt's Perceptron Algorithm (1957)
+
+The Rosenblatt's Perceptron Algorithm was designed to overcome most of the issues of McCulloch-Pitt's neuron:
+
+- it can process non-boolean inputs
+- it included the learning capabilities, where based on the data it can assign the weights of each input individually,
+- it can compute the threshold automatically.
+
+Let's consider the setup of Neuron for Perceptron Algorithm now, where we will adjust the representation slightly my moving the threshold to the left, and including it in the calculation of weighted aggregation. And with the the equation can be adjusted and made simpler as is highlighted in the diagram below:
+
+<img
+  src="https://raw.githubusercontent.com/reinventsoni/ssoni-dev-learn-blog/main/_images/DeepLearning/_images/PerceptronNeuron.png"
+  align="center"
+  width="700"
+  height="700"
+/>
+
+As we have moved the arbitrary threshold value (theta) to left and included it in the calculation of weighted sum it becomes learnable **(more on the actual algorithm and how the learning happen shortly)**. Here in this setup **w<sub>0</sub>** which is equal to -theta, is called bias, and the weight assigned to this is x<sub>0</sub> and is equal to 1.
+
+Perceptron Algorithm was proposed as a Binary Classification algorithm (i.e. predicting values 0 and 1), so we will now step by step build the algorithm, building our intution algebraically as well as geometrically (obviously for a better understanding)
+
+Let's first have a look at a linearly separable (dummy) dataset with two inputs X1 and X2 just for simplicity, and having two class labels 0 and 1.
+
+Let's say following is our training dataset, based on which we want to train our Artificial Neuron, by the visual inspection of it we can quicky draw few Linear Classifiers through the dataset pretty easily (some of Binary Linear Classifiers are depicted through various lines in the figure on the right hand side
+
+<MDXImage
+  src="https://raw.githubusercontent.com/reinventsoni/ssoni-dev-learn-blog/main/_images/DeepLearning/_images/Step0_Visual_Look_at_Data.png"
+  align="center"
+  height="700"
+  width="700"
+/>
+
+**CONCEPT 1: Algebric Representation of Line / Parameterizing the Linear Classifier Line**:
+
+Now for us to mathematically find the 'a' linear classifier that can divide this dataset into two, the first step is to paramaterize the **line**, that our Preceptron Algorithm will learn
+
+<MDXImage src="image/Concept1_ParameterizeLine.png" align="center" width="1000" height="1000" />
+
+So as we can see based on the diagram above, the first step of calculation that our Artificial Neuron does represent a line. So by essentially having weight Ws as the parameter associated with each input and threshold value, we have parameterized the line that will represent the Linear Classifier.
+
+**CONCEPT 2: Vector Representation of Line and Geometric/Visual Interpretation**:
+
+In this dummy dataset we have only considered 2 inputs (features) in set, but in practice we seldom have only 2 features to consider, and as such we will using the **Vectors/Matrices** to perform the linear transformations, i.e. taking the weighed sum of the inputs features, and it is prudent to understand visually (geomterically) what happens when we do Matrix Multiplcation and Additions/Subtractions etc.
+
+This visual intution of the operations will be very useful in understanding why the **Perceptron Algorithm**, and for that matter many other algorithms which we will learn down the line works
+
+<MDXImage
+  src="https://raw.githubusercontent.com/reinventsoni/ssoni-dev-learn-blog/main/_images/DeepLearning/_images/Concept2_Vector Representation of Line.png"
+  align="center"
+  height="700"
+  width="700"
+/>
+
+So in summary:
+
+- Algorithmically, the weighted sum of the inputs and weights, can be performed as Matrix Multiplication,
+- And the Vector corresponding to Weights Ws, actually represent a vector orthogonal to the Linear Classifier
+- The space on one side of the Linear Classifier will represent +ve space (Class / Label 1) and -ve space on the other (Class Label 0)
+
+> With this mathemtical and vector concepts out of the way, intuitively understanding the Perceptron Algorithm and why it works the way it do will be pretty easy
+
+#### 1.2.1.1 Step1: Initialize the Weights and Bias Unit.
+
+In the original Perceptron Algorithm, weights and bias were initialized to 0. In practice though, in actual implementation we can also initialized these to 0
+
+#### 1.2.1.2 Step1: Iterate through all the Training Example, Perform Calculation
+
+In this step we will now go through each of the training example one by one and perform following operation:
+
+- Compute aggregated sum z = w0x0 + w1x1 + w2x2
+- Compute the output value y = 1, if z>=0 and y=0 if z<0
+- Update the weight and bias units (simultaneously)
+  - w<sub>j</sub> = w<sub>j</sub> + (y<sup>(i)</sup> - y_hat<sup>(i)</sup>) . x<sub>j</sub><sup>(i)</sup>
+  - b = b + (y<sup>(i)</sup> - y_hat<sup>(i)</sup>)
