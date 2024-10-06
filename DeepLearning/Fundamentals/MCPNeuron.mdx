@@ -208,7 +208,7 @@ Perceptron Algorithm was proposed as a Binary Classification algorithm (i.e. pre
 
 Let's first have a look at a linearly separable (dummy) dataset with two inputs X1 and X2 just for simplicity, and having two class labels 0 and 1.
 
-Let's say following is our training dataset, based on which we want to train our Artificial Neuron, by the visual inspection of it we can quicky draw few Linear Classifiers through the dataset pretty easily (some of Binary Linear Classifiers are depicted through various lines in the figure on the right hand side
+Let's say following is our training dataset, based on which we want to train our Artificial Neuron, by the visual inspection of it we can quicky draw few Linear Classifiers through the dataset pretty easily some of Binary Linear Classifiers are depicted through various lines in the figure on the right hand side.
 
 <MDXImage
   src="https://raw.githubusercontent.com/reinventsoni/ssoni-dev-learn-blog/main/_images/DeepLearning/_images/Step0_Visual_Look_at_Data.png"
@@ -248,14 +248,4 @@ So in summary:
 
 #### 1.2.1.1 Step1: Initialize the Weights and Bias Unit.
 
-In the original Perceptron Algorithm, weights and bias were initialized to 0. In practice though, in actual implementation we can also initialized these to 0
-
-#### 1.2.1.2 Step1: Iterate through all the Training Example, Perform Calculation
-
-In this step we will now go through each of the training example one by one and perform following operation:
-
-- Compute aggregated sum z = w0x0 + w1x1 + w2x2
-- Compute the output value y = 1, if z>=0 and y=0 if z<0
-- Update the weight and bias units (simultaneously)
-  - w<sub>j</sub> {=} w<sub>j</sub> + (y<sup>(i)</sup> - y_hat<sup>(i)</sup>) . x<sub>j</sub><sup>(i)</sup>
-  - b {=} b + (y<sup>(i)</sup> - y_hat<sup>(i)</sup>)
+In the original Perceptron Algorithm, weights and bias were initialized to 0. In practice though, in actual implementation we can also initialized these to 0.
