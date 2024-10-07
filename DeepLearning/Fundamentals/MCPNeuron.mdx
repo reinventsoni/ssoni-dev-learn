@@ -261,7 +261,7 @@ Let's also consider a simpler dataset, to build our intuition, as per diagram be
 In this step we will now go through each of the training example one by one and perform following operation:
 
 - Compute aggregated sum z = w<sub>1</sub>x<sub>1</sub> + w<sub>2</sub>x<sub>2</sub>
-- Compute the output value y = 1 when z>=0, y=0 if z<0
+- Compute the output value y = 1 when {z>=0, y=0 if z<0}
 - Update the weight and bias units (simultaneously)
   - w<sub>j</sub> = w<sub>j</sub> + (y<sup>(i)</sup> - y_hat<sup>(i)</sup>) . x<sub>j</sub><sup>(i)</sup>
   - b = b + (y<sup>(i)</sup> - y_hat<sup>(i)</sup>)
