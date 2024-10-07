@@ -6,7 +6,7 @@ publishedAt: "2024-10-04"
 updatedAt: "2024-10-05"
 author: "Sanjay Soni"
 isPublished: "true"
-tags: ["deep-learning", "deep-learning-foundations"]
+tags: ["deep-learning", "deep-learning-foundations", "deep-learning-artificial-neurons"]
 ---
 
 # The First Artificial Neuron
@@ -29,8 +29,6 @@ The concept of artificial neuron was inspired by the **Biological Neurons** whic
 
 <MDXImage
   src="https://raw.githubusercontent.com/reinventsoni/ssoni-dev-learn-blog/main/_images/DeepLearning/_images/BiologicalNeuron.webp"
-  alt="Bilogoical Neuron"
-  align="center"
   width="500"
   height="500"
 />
@@ -56,8 +54,10 @@ The idea of the **McCulloch Pitts Neuron** was to provide the abstractions on ho
   - input signal with weight **1** are called excitory input, since they contribute towards a positive output signal in the sum
   - input signal with weight of **-1** are called inhibitory since they repress a positive output signal in the sum
   - input signal with weight of **0** do not contribute at all to the neuron
-- The accumulated signal (sometimes also referred to as **net input**) can then be calculated as follows:
+- The accumulated signal (sometimes also referred to as **net input**) can then be calculated as follows:<br>
+
   - z = w<sub>1</sub>.x<sub>1</sub> + w<sub>2</sub>.x<sub>2</sub> + .... + w<sub>n-1</sub>.x<sub>n-1</sub> + w<sub>n</sub>.x<sub>n</sub>
+
 - Then for some threshold value **t**, an integer, the output signal is determined by the **decision function** or **activation function** as follows:
   - y = 1, if z >= t or 0 otherwise
 
@@ -65,10 +65,8 @@ The neuron is said to be activated or in **ON** state (i.e. having value of 1), 
 
 <MDXImage
   src="https://raw.githubusercontent.com/reinventsoni/ssoni-dev-learn-blog/main/_images/DeepLearning/_images/BiologicalvsAritificalNeuron.png"
-  alt="Biological Neuron vs Aritificial Neuron"
-  align="center"
-  width="1200"
-  height="500"
+  height="700"
+  width="700"
 />
 
 #### 1.1.2 Original Experiments using McCulloch Pitt's Neuron
@@ -161,9 +159,8 @@ Now we have already see that MCP Neuron experiments were focused on constructing
 
 The following figure summarize the workings of MCP Neuron:
 
-<img
+<MDXImage
   src="https://raw.githubusercontent.com/reinventsoni/ssoni-dev-learn-blog/main/_images/DeepLearning/_images/MCPNeuronThreshold.png"
-  align="center"
   width="700"
   height="700"
 />
@@ -195,9 +192,8 @@ The Rosenblatt's Perceptron Algorithm was designed to overcome most of the issue
 
 Let's consider the setup of Neuron for Perceptron Algorithm now, where we will adjust the representation slightly my moving the threshold to the left, and including it in the calculation of weighted aggregation. And with the the equation can be adjusted and made simpler as is highlighted in the diagram below:
 
-<img
+<MDXImage
   src="https://raw.githubusercontent.com/reinventsoni/ssoni-dev-learn-blog/main/_images/DeepLearning/_images/PerceptronNeuron.png"
-  align="center"
   width="700"
   height="700"
 />
@@ -208,11 +204,10 @@ Perceptron Algorithm was proposed as a Binary Classification algorithm (i.e. pre
 
 Let's first have a look at a linearly separable (dummy) dataset with two inputs X1 and X2 just for simplicity, and having two class labels 0 and 1.
 
-Let's say following is our training dataset, based on which we want to train our Artificial Neuron, by the visual inspection of it we can quicky draw few Linear Classifiers through the dataset pretty easily some of Binary Linear Classifiers are depicted through various lines in the figure on the right hand side.
+Let's say the following is our training dataset, based on which we want to train our Artificial Neuron; by the visual inspection of it, we can quickly draw few Linear Classifiers through the dataset pretty quickly (some Binary Linear Classifiers are depicted through various lines in the figure on the right-hand side
 
 <MDXImage
   src="https://raw.githubusercontent.com/reinventsoni/ssoni-dev-learn-blog/main/_images/DeepLearning/_images/Step0_Visual_Look_at_Data.png"
-  align="center"
   height="700"
   width="700"
 />
@@ -223,7 +218,6 @@ Now for us to mathematically find the 'a' linear classifier that can divide this
 
 <MDXImage
   src="https://raw.githubusercontent.com/reinventsoni/ssoni-dev-learn-blog/main/_images/DeepLearning/_images/Concept1_ParameterizeLine.png"
-  align="center"
   width="1000"
   height="1000"
 />
@@ -238,7 +232,6 @@ This visual intution of the operations will be very useful in understanding why 
 
 <MDXImage
   src="https://raw.githubusercontent.com/reinventsoni/ssoni-dev-learn-blog/main/_images/DeepLearning/_images/Concept2_Vector Representation of Line.png"
-  align="center"
   height="700"
   width="700"
 />
@@ -247,10 +240,93 @@ So in summary:
 
 - Algorithmically, the weighted sum of the inputs and weights, can be performed as Matrix Multiplication,
 - And the Vector corresponding to Weights Ws, actually represent a vector orthogonal to the Linear Classifier
-- The space on one side of the Linear Classifier will represent +ve space (Class / Label 1) and -ve space on the other (Class Label 0)
+- The space on one side _(above the line)_ of the Linear Classifier will represent +ve space i.e. Class/Label 1, and the space on the other side of the line _(below the line)_ i.e. Class/Label 0
 
 > With this mathemtical and vector concepts out of the way, intuitively understanding the Perceptron Algorithm and why it works the way it do will be pretty easy
 
 #### 1.2.1.1 Step1: Initialize the Weights and Bias Unit.
 
-In the original Perceptron Algorithm, weights and bias were initialized to 0. In practice though, in actual implementation we can also initialized these to 0.
+In the original Perceptron Algorithm, weights and bias were initialized to 0. In practice though, in actual implementation we can also initialized these to some random number
+
+Let's also consider a simpler dataset, to build our intuition, as per diagram below:
+
+<MDXImage
+  src="https://raw.githubusercontent.com/reinventsoni/ssoni-dev-learn-blog/main/_images/DeepLearning/_images/Step1_SampleData_InitializeWeights.png"
+  width="1000"
+  height="700"
+/>
+
+#### 1.2.1.2 Step 2: Iterate through all the Training Example, Perform Calculation
+
+In this step we will now go through each of the training example one by one and perform following operation:
+
+- Compute aggregated sum z = w<sub>1</sub>x<sub>1</sub> + w<sub>2</sub>x<sub>2</sub>
+- Compute the output value y = 1 when z>=0, y=0 if z<0
+- Update the weight and bias units (simultaneously)
+  - w<sub>j</sub> = w<sub>j</sub> + (y<sup>(i)</sup> - y_hat<sup>(i)</sup>) . x<sub>j</sub><sup>(i)</sup>
+  - b = b + (y<sup>(i)</sup> - y_hat<sup>(i)</sup>)
+
+We will pick two training example to understand - one of **Class 0** and other of **Class 1**, and just for demonstration purposes we will consider a simpler dataset.
+
+Let's start with Class 0 sample first, and the results of performing the algorithm operations are explained below:
+
+<MDXImage
+  src="https://raw.githubusercontent.com/reinventsoni/ssoni-dev-learn-blog/main/_images/DeepLearning/_images/Step2a_SampleData_Class0.png"
+  width="1000"
+  height="700"
+/>
+
+Let's take look at another example but Class 1 this time. The sample datapoint and the result of operations are explained in the figure below:
+
+<MDXImage
+  src="https://raw.githubusercontent.com/reinventsoni/ssoni-dev-learn-blog/main/_images/DeepLearning/_images/Step2b_SampleData_Class1.png"
+  width="1000"
+  height="700"
+/>
+
+#### 1.2.1.3 Step 3: Outer Loop until Convergence or Fixed Number of Times
+
+Now as Perceptron moves through the individual data points, it is very much possible that the adjustments made to correctly classify previous picked up points are reverted, and as a result some of the points become incorrectly classified. As such there is a need to create a surrounding loop on the operations we have done in Step 2, and continue that loop until the algorithm converges, or in practice run that for certain number of times (50/100).
+
+#### 1.2.2 Linear Separation and Convergence of the Perceptron Algorithm
+
+As highlighted in the previous section, we need to run the Perceptron Algorithm until it converges. Now, there may be doubt in your minds, and rightly so; what if it never converges and continues to be in the loop? There is theoretical proof that the algorithm converges, and attached here is the one from Prof. Michael Collins of Columbia University: [Convergence Proof Here](http://www.cs.columbia.edu/~mcollins/courses/6998-2012/notes/perc.converge.pdf)
+
+It's also pretty clear today that Perceptron only works when there is a clear Linear Separation in the data. If we have a dataset that cannot be linearly separated, the Perceptron Algorithm will fail. In the 1960s **Marvin Minsky** and **Seymour Papert** highlighted the limitation that Perceptron could not perform similar XOR operations, one of the basic logic gates. As a result, all the excitement around Neural Network crashed, and we went into the AI Winter. Various other factors were causing this AI Winter, but the algorithm's limitations were one of the important ones. [XOR Issue, Perceptron Controversy References](https://yuxi-liu-wired.github.io/essays/posts/perceptron-controversy)
+
+#### 1.2.3 General Architecture of Learning Algorithm
+
+In our next blog series, we will implement the Perceptron Algorithm from scratch, but before we do that, I would like to bring your attention to a mental model of how Learning Algorithms work. This mental model will apply not only to the Perceptron Algorithm but also to various other algorithms that we will cover.
+
+In our previous model, we have considered our Artificial Neuron as taking in all the inputs, doing **NET INPUT**, also referred to as **WEIGHTED SUM** calculation of all the inputs, and then based on the **threshold approach** providing the output of 0 and 1. We will break this into individual steps and also generalize these operations as described below:
+
+- The First Operation we will refer to as NET-INPUT function (these will map to the Linear Layer of the Deep Learning Models)
+- The Second Operation, we will refer to as ACTIVATION FUNCTION(these will map to ACTIVATION FUNCTIONS of the Deep Learning Models)
+
+So, our algorithm can be graphically depicted as follows:
+
+<MDXImage
+  src="https://raw.githubusercontent.com/reinventsoni/ssoni-dev-learn-blog/main/_images/DeepLearning/_images/UpdatedNeuronModel.png"
+  width="700"
+  height="700"
+/>
+
+With this model of Neurons and Algorithms, different algorithms can be implemented by having different Activation Functions and Prediction Functions.
+
+For the Perceptron Algorithm, our Activation Function is a Step Function that squashes the net input into 0 and 1, and the prediction function equals the output of the Activation Function.
+
+<MDXImage
+  src="https://raw.githubusercontent.com/reinventsoni/ssoni-dev-learn-blog/main/_images/DeepLearning/_images/UnitStepThresholdFunction.png"
+  width="400"
+  height="700"
+/>
+
+#### 1.2.3 Conclusion
+
+In this article we briefly explored the Biological Neurons, and how this inspired the postulate of Artificial Neuron way back in 1940s. The first concept of Artificial Neuron was published by **Warren McCulloch** and **Warren Pitts**, and is thus referred to as **McCuolloch Pitts Neuron** or in short as **MCP Neuron.** We then showed how using MCP Neuron, various logical gates can be represented.
+
+We discussed the need for a Learning Algorithm so that instead of manually deciding the values of weights **w** and bias **b**, the algorithm should be able to derive these based on the training data. We then discussed that the first such algorithm was **Perceptron Algorithm**and developed an algebraic and geometric intuition of how the algorithm works. We then also highlighted a crucial limitation of the Perceptron Algorithm, in that it only works in the case of Linearly Separable classification data. We also discussed that when it was identified that Perceptron is not able to simulate XOR, majority of the excitement vanished and was one of the reasons.
+
+Just to conclude, this limitation of Perceptron was later resolved by extending the network and using what is now known as **Multi Layer Perceptron**, which is a concept of interconnected layers of networks that is very much prevalent in today's **DEEP LEARNING MODELS** as well.
+
+To continue this journey and to warm up the **coding muscle**, in our next blog, we will develop the PERCEPTRON ALGORITHM and ADALINE ALGORITHM from scratch. After which, we will jump to **PyTorch**, a deep learning library we will extensively use in the series of blogs to come.
