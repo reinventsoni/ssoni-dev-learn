@@ -260,17 +260,14 @@ Let's also consider a simpler dataset, to build our intuition, as per diagram be
 
 In this step we will now go through each of the training example one by one and perform following operation:
 
-**TODO: Image to be added**
-
 - Compute Aggregated Sum $$ z = w_1.x_1 + w_2.x_2 $$
 - Compute Output Value y based on the following threshold logic:
-
 - Update the Weight and Bias Unit simultaneously:
   $$
   w_j = w_j + (y^{(i)} - \^y^{(i)}).x_j^{(i)}
   $$
   $$
-  w_j = w_j + (y^{(i)} - \^y^{(i)})
+  b = b + (y^{(i)} - \^y^{(i)})
   $$
 
 We will pick two training example to understand - one of **Class 0** and other of **Class 1**, and just for demonstration purposes we will consider a simpler dataset.
