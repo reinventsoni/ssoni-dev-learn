@@ -1,2 +1,2 @@
 # ssoni-dev-learn
-Blogs created during Learning Phase
+Capturing the learning and (re)learning journey, and creating the blogs on the ssoni.dev website
