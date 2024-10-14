@@ -266,6 +266,12 @@ In this step we will now go through each of the training example one by one and 
 - Compute Output Value y based on the following threshold logic:
 
 - Update the Weight and Bias Unit simultaneously:
+  $$
+  w_j = w_j + (y^{(i)} - \^y^{(i)}).x_j^{(i)}
+  $$
+  $$
+  w_j = w_j + (y^{(i)} - \^y^{(i)})
+  $$
 
 We will pick two training example to understand - one of **Class 0** and other of **Class 1**, and just for demonstration purposes we will consider a simpler dataset.
 
