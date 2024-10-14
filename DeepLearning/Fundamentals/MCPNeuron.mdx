@@ -262,6 +262,15 @@ In this step we will now go through each of the training example one by one and 
 
 - Compute Aggregated Sum $$ z = w_1.x_1 + w_2.x_2 $$
 - Compute Output Value y based on the following threshold logic:
+  $$
+  \[
+  y =
+  \begin{cases}
+  \1 &\text{if} z \geq 0
+  \0 &\text{if} z < 0
+  \end{cases}
+  \]
+  $$
 - Update the Weight and Bias Unit simultaneously:
   $$
   w_j = w_j + (y^{(i)} - \^y^{(i)}).x_j^{(i)}
