@@ -1,12 +1,12 @@
 ---
-title: "MCP Neuron: First Artificial Neuron"
+title: "Brief History of Deep Learning, Artificial Neurons"
 description: "The fundamental concept of Artificial Neuron as proposed by McCulloch Pitts Neuron"
 image: "https://raw.githubusercontent.com/reinventsoni/ssoni-dev-learn-blog/main/_images/DeepLearning/_images/DeepLearningFoundations.webp"
 publishedAt: "2024-10-04"
 updatedAt: "2024-10-05"
 author: "Sanjay Soni"
 isPublished: "true"
-tags: ["deep-learning", "deep-learning-foundations", "deep-learning-artificial-neurons"]
+tags: ["deep-learning", "deep-learning-foundations", "artificial-intelligence"]
 ---
 
 # McCulloch Pitts Neuron aka MCP Neuron: The First Artificial Neuron
@@ -262,6 +262,7 @@ In this step we will now go through each of the training example one by one and 
 
 - Compute Aggregated Sum $$ z = w_1.x_1 + w_2.x_2 $$
 - Compute Output Value y based on the following threshold logic:
+
   $$
    y =
    \begin{cases}
@@ -269,7 +270,9 @@ In this step we will now go through each of the training example one by one and 
    0 &\text{if} z < 0
    \end{cases}
 
+
   $$
+
 - Update the Weight and Bias Unit simultaneously:
   $$
   w_j = w_j + (y^{(i)} - \^y^{(i)}).x_j^{(i)}
